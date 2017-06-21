@@ -57,7 +57,7 @@ namespace Drawing_Test
             Brush partColorBrush = new SolidBrush(partColor);
             Pen partColorPen = new Pen(Color.Red, 7);
             tool.FillRectangle(partColorBrush, xOfUpperLeft, yOfUpperLeft, cellWidth, cellHeigth); // create a rectangle and fill it with said brush color
-            tool.DrawLine(partColorPen, 100, 100, 100, 100);
+            tool.DrawLine(partColorPen, 0, 1, 0, 10);
 
             // Dispose of the tools and release them from memory
             gridPng.Save("Hello.png");
