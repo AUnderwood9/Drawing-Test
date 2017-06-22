@@ -46,8 +46,8 @@ namespace Drawing_Test
             int cellHeigth = HEITH_IN_PIXLES / ROWS;
 
             // Fill the rectangle with a gradient
-            int currentColumn = 0;
-            int currentRow = 0;
+            int currentColumn = 9;
+            int currentRow = 1;
             int xOfUpperLeft = currentColumn * cellWidth;
             int yOfUpperLeft = currentRow * cellHeigth;
             int xOfLowerRight = (currentColumn * cellWidth) + cellWidth; // adding cellwidth shifts the position to the right
@@ -56,7 +56,8 @@ namespace Drawing_Test
             Color partColor = Color.Gold;
             Brush partColorBrush = new SolidBrush(partColor);
             Pen partColorPen = new Pen(Color.Red, 7);
-            tool.FillRectangle(partColorBrush, xOfUpperLeft, yOfUpperLeft, cellWidth, cellHeigth); // create a rectangle and fill it with said brush color
+            //tool.FillRectangle(partColorBrush, xOfUpperLeft, yOfUpperLeft, cellWidth, cellHeigth); // create a rectangle and fill it with said brush color
+            tool.FillRectangle(partColorBrush, currentColumn, currentRow, cellWidth, cellHeigth);
             tool.DrawLine(partColorPen, 0, 1, 0, 10);
 
             // Dispose of the tools and release them from memory
