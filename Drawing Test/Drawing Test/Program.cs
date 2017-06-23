@@ -46,19 +46,21 @@ namespace Drawing_Test
             int cellHeigth = HEITH_IN_PIXLES / ROWS;
 
             // Fill the rectangle with a gradient
-            int currentColumn = 9;
+            int currentColumn = 250;
             int currentRow = 1;
             int xOfUpperLeft = currentColumn * cellWidth;
             int yOfUpperLeft = currentRow * cellHeigth;
             int xOfLowerRight = (currentColumn * cellWidth) + cellWidth; // adding cellwidth shifts the position to the right
             int yOfLowerRight = (currentRow * cellHeigth) + cellHeigth;
 
-            Color partColor = Color.Gold;
-            Brush partColorBrush = new SolidBrush(partColor);
+            Brush partColorBrush = new SolidBrush(Color.Gold);
+            Brush partColorBrush2 = new SolidBrush(Color.Red);
             Pen partColorPen = new Pen(Color.Red, 7);
             //tool.FillRectangle(partColorBrush, xOfUpperLeft, yOfUpperLeft, cellWidth, cellHeigth); // create a rectangle and fill it with said brush color
             tool.FillRectangle(partColorBrush, currentColumn, currentRow, cellWidth, cellHeigth);
-            tool.DrawLine(partColorPen, 0, 1, 0, 10);
+            //tool.DrawLine(partColorPen, currentColumn, currentRow, 0, currentRow * cellHeigth);
+            //tool.DrawLine(partColorPen, 1, 0, 0, 10);
+            tool.FillEllipse(partColorBrush2, currentColumn, currentRow, cellWidth/2, cellHeigth/2);
 
             // Dispose of the tools and release them from memory
             gridPng.Save("Hello.png");
@@ -66,5 +68,6 @@ namespace Drawing_Test
             tool.Dispose();
             gridPng.Dispose();
         }
+
     }
 }
